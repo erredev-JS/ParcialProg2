@@ -7,7 +7,7 @@ public class Prueba {
 
     private int codigo;
     private String titulo;
-    private ArrayList<Instalacion> seHaceEn = new ArrayList<>();
+    private ArrayList<Atleta> participantes = new ArrayList<>();
 
     // Constructores
 
@@ -36,23 +36,27 @@ public class Prueba {
         this.titulo = titulo;
     }
 
-    public void agregarSeHaceEn(Instalacion instalacion) {
-        seHaceEn.add(instalacion);
-    }
+
+
+
+    // Metodos
 
     public void mostrarInfo() {
         System.out.println("Información de la Prueba:\n" +
                 "Código: " + this.getCodigo() + "\n" +
                 "Título: " + this.getTitulo());
-        if (!seHaceEn.isEmpty()) {
-            for (Instalacion instalacion : seHaceEn
-            ) {
-                System.out.println("Nombre de la instalacion: " + instalacion.getNombre() + " Localizacion de la ubicacion: " + instalacion.getLocalizacion());
-            }
+    }
+    public void agregarParticipante(Atleta participante){
+        participantes.add(participante);
+    }
 
+    public Atleta devolverParticipante(int i) throws IndexOutOfBoundsException {
+        if (i >= 0 && i < participantes.size()) {
+            return participantes.get(i);
         } else {
-
-            System.out.println("Esta prueba no se realiza en ninguna instalación.");
+            throw new IndexOutOfBoundsException("Participante inexistente");
         }
     }
+
+
 }

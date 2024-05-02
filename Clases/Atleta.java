@@ -81,8 +81,6 @@ public class Atleta extends Persona implements Contrato{
                 "Peso extra: " + (this.hayPesoExtra(this.getPeso()) ? "Sí" : "No") + "\n" +
                 "Pulsaciones máximas teóricas: " + this.tomarPulsaciones() + "\n" +
                 "------------------------------------");
-        System.out.println("Equipos Nacionales: ");
-        this.mostrarEquiposNacionales();
 
     }
     public void mostrarEquiposNacionales(){

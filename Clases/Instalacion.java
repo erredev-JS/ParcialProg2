@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Instalacion {
 
     // Atributos
@@ -8,6 +10,8 @@ public class Instalacion {
     private String localizacion;
     private String nombre;
     private String tipo;
+
+    private ArrayList<Prueba> pruebasSeHacen = new ArrayList<>();
 
     // Constructores
 
@@ -62,5 +66,15 @@ public class Instalacion {
                 "Tipo: " + this.getTipo());
     }
 
+    public void agregarPrueba(Prueba prueba){
+        pruebasSeHacen.add(prueba);
+    }
+    public Prueba devolverPrueba(int i) throws IndexOutOfBoundsException {
+        if (i >= 0 && i < pruebasSeHacen.size()) {
+            return pruebasSeHacen.get(i);
+        } else {
+            throw new IndexOutOfBoundsException("Prueba inexistente");
+        }
+    }
 
 }

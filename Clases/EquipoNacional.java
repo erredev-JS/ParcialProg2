@@ -1,9 +1,13 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class EquipoNacional {
     // Atributos
         private String color;
         private String pais;
+
+        private ArrayList<Atleta> integrantes = new ArrayList<>();
     // Constructores
 
     public EquipoNacional(String color, String pais) {
@@ -34,6 +38,17 @@ public class EquipoNacional {
         System.out.println("Información del Equipo Nacional:\n" +
                 "País: " + this.getPais() + "\n" +
                 "Color: " + this.getColor());
+
+        for (Atleta integrante: integrantes
+             ) {
+            integrante.mostrarInfo();
+        }
     }
+
+    public void agregarIntegrante(Atleta integrante){
+        integrantes.add(integrante);
+    }
+
+
 
 }
